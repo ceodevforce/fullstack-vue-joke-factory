@@ -1,0 +1,27 @@
+{
+    "name": "fullstack-vue-joke-factory",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "server": "nodemon server/server.js",
+        "client": "cd client && npm run dev",
+        "start": "concurrently -k \"npm run server\" \"npm run client\""
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "apollo": "^2.34.0",
+        "apollo-server": "^3.9.0",
+        "bootstrap": "^5.2.0-beta1",
+        "dotenv": "^16.0.1",
+        "graphql": "^15.8.0",
+        "jsonwebtoken": "^8.5.1",
+        "md5": "^2.3.0",
+        "mongoose": "^6.4.0"
+    },
+    "devDependencies": {
+        "concurrently": "^7.2.2",
+        "nodemon": "^2.0.16"
+    }
+}
