@@ -64,8 +64,15 @@ const resolvers = {
 }
 
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    // cors: {
+    //     origin: 'http://localhost:3000',
+    //     credentials: true
+    // }
+});
 
-server.listen().then(({ url }) => {
+server.listen(4500).then(({ url }) => {
     console.log(`🚀  Server ready at ${url}`);
 })

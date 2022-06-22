@@ -12,10 +12,13 @@
     "license": "ISC",
     "dependencies": {
         "apollo": "^2.34.0",
+        "apollo-boost": "^0.4.9",
         "apollo-server": "^3.9.0",
         "bootstrap": "^5.2.0-beta1",
+        "cors": "^2.8.5",
         "dotenv": "^16.0.1",
         "graphql": "^15.8.0",
+        "helmet": "^5.1.0",
         "jsonwebtoken": "^8.5.1",
         "md5": "^2.3.0",
         "mongoose": "^6.4.0"

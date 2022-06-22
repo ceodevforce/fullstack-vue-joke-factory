@@ -5,13 +5,14 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
-    IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
-    IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
-    IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
-    IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
+    AddJoke: typeof import('./src/components/Jokes/AddJoke.vue')['default']
+    Auth: typeof import('./src/components/Auth/Auth.vue')['default']
+    Jokes: typeof import('./src/components/Jokes/Jokes.vue')['default']
+    MainNavbar: typeof import('./src/components/MainNavbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Signin: typeof import('./src/components/Auth/Signin.vue')['default']
+    Signup: typeof import('./src/components/Auth/Signup.vue')['default']
   }
 }
 
