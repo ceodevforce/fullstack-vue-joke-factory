@@ -8,9 +8,6 @@ import App from "./App.vue";
 import router from "./router";
 
 
-
-
-
 // const defaultClient = new ApolloClient({
 //     uri: 'http://localhost:4500/'
 // })

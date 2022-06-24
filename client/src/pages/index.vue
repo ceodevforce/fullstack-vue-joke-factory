@@ -1,30 +1,33 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
-// import { gql } from 'apollo-boost'
-import { useQuery } from '@vue/apollo-composable';
-import gql from 'graphql-tag'
+import { ref, reactive, watchEffect } from "vue";
+import { useJokeStore } from "../stores/joke";
+
+import { useQuery } from "@vue/apollo-composable";
+import gql from "graphql-tag";
 /**
 Query
 */
-const jokeArray = ref(null)
+const jokeArry= ref(null)
 
 const { result } = useQuery(gql`
-  query getJokes{
+  query getJokes {
     allJokes {
       id
       joke
       punchline
     }
   }
-`)
-// console.log(result.value)
-// const { allJokes } = result
-// console.log(allJokes)
-// const jokeReactive = reactive(result)
-// jokeArray.value = jokeReactive
-// console.log(jokeReactive)
+`);
 
-// console.log(jokeArray)
+const store = useJokeStore();
+
+watchEffect(() => {
+  console.log(result.value)
+  store.jokeArray = result.value  
+})
+
+
+
 
 </script>
 <template>
@@ -52,7 +55,12 @@ const { result } = useQuery(gql`
             <div class="col-lg-6 col-12">
               <h1 class="title">See Jokes Here...</h1>
               <div v-if="result && result.allJokes">
-                <div v-for="item in result.allJokes">Jokes</div>
+                <div v-for="item in result.allJokes">
+                  <h1>
+                    {{ item.joke }}
+                  </h1>
+                  <p>{{ item.punchline }}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -61,5 +69,3 @@ const { result } = useQuery(gql`
     </div>
   </div>
 </template>
-
-
