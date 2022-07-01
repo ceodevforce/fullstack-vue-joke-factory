@@ -1,18 +1,24 @@
 <script setup lang="ts">
+import { ref, reactive, watchEffect, onMounted } from "vue";
+import { useJokeStore } from "./stores/joke";
+import useJoke from "./composables/useJoke";
 
-//TODO: Add the following components
-/**
-Jokes - AddJokes.vue and Jokes.vue 
-Auth = Profile.vue / Signin.vue / Signup.vue 
-*/
+const { loading, jokes, getJokes } = useJoke();
 
-//TODO: Create route or add vue files for routing in pages folder
-/**
-Jokes - /jokes
-AddJokes - /jokes/add-jokes
-Signup - /signup
-Signin - /signin
-*/
+onMounted(() => {
+  getJokes();
+})
+
+const jokesReact = reactive(jokes);
+const store = useJokeStore();
+
+store.jokeArray.push(jokes);
+
+//TODO: Add user logic to Pinia store
+
+
+//TODO: Add jokes array to store
+
 
 //TODO: Add features and transitions (pages)
 </script>

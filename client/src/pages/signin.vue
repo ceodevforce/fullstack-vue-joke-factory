@@ -1,22 +1,23 @@
 <script setup lang="ts">
 import { ref, reactive, watchEffect, onMounted } from "vue";
-import { useRouter } from "vue-router";
 import useSupabaseUser from "../composables/useSupabaseUser";
-
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 const email = ref("");
 const password = ref("");
+const { loading, error, newUser, existingUser, userSignIn} = useSupabaseUser();
 
-const { loading, error, newUser, existingUser, userSignUp, userSignIn, userMagicLink } = useSupabaseUser();
-
-const signUp = () => {
-    userSignUp(email.value, password.value);
-    router.push("/");
+const signIn = () => {
+    userSignIn(email.value, password.value);
+    router.push("/joke-feed");
 };
 </script>
 <template>
     <div>
+        <div class="mx-auto">
+            <h1>Sign-In</h1>
+        </div>
         <main class="w-100 m-auto">
             <form>
                 <img class="mb-4"
@@ -29,11 +30,12 @@ const signUp = () => {
                 </div>
                 <div class="formFloats">
                     <label for="inputPassword">Enter Password</label>
-                    <input id="floatPassword" class="form-control" type="password" placeholder="Email Here" v-model="password">
+                    <input id="floatPassword" class="form-control" type="password" placeholder="Email Here"
+                        v-model="password">
                 </div>
-                <button class="btn btn-lg btn-primary btn-block" type="button" @click="signUp">Sign Up</button>
+                <button class="btn btn-lg btn-primary btn-block" type="button" @click="signIn">Sign In</button>
             </form>
         </main>
-        <h1>Signup</h1>
+        
     </div>
 </template>
