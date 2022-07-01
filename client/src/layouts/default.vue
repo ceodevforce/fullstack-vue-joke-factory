@@ -1,7 +1,7 @@
 <template>
   <div>
-    <MainNavbar />
-    <main class="container mt-2">
+    <MainSecondNavbar />
+    <main class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <RouterView />
     </main>
   </div>

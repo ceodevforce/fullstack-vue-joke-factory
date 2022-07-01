@@ -6,9 +6,14 @@ import '@vue/runtime-core'
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AddJoke: typeof import('./src/components/Jokes/AddJoke.vue')['default']
+    Alert: typeof import('./src/components/Alert.vue')['default']
     Auth: typeof import('./src/components/Auth/Auth.vue')['default']
+    JokeModal: typeof import('./src/components/JokeModal.vue')['default']
     Jokes: typeof import('./src/components/Jokes/Jokes.vue')['default']
+    MainHero: typeof import('./src/components/MainHero.vue')['default']
+    MainJokeCardIndex: typeof import('./src/components/MainJokeCardIndex.vue')['default']
     MainNavbar: typeof import('./src/components/MainNavbar.vue')['default']
+    MainSecondNavbar: typeof import('./src/components/MainSecondNavbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Signin: typeof import('./src/components/Auth/Signin.vue')['default']
