@@ -9,12 +9,18 @@ import useSupabaseUser from "../composables/useSupabaseUser";
 const router = useRouter(); 
 const route = useRoute();
 
-const { user } = useSupabaseUser();
+const { user, userSignOut } = useSupabaseUser();
 console.log(user)
+
+const signOut = () => {
+  userSignOut();
+  router.push("/");
+}
 
 watchEffect(() => {
   console.log(user)
-  
+  user
+
 })
 </script>
 <template>
@@ -89,7 +95,13 @@ watchEffect(() => {
                     </RouterLink>
 
                   </li>
+                  <li class="nav-item">
 
+                    <a class="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1" @click="userSignOut">
+                      Logout
+                    </a>
+
+                  </li>
                 </ul>
               </div>
             </div>
