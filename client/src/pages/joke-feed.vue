@@ -1,13 +1,21 @@
 <script setup lang="ts">
 import { ref, reactive, watchEffect, onMounted } from "vue";
 import useJoke from "../composables/useJoke";
+import useSupabaseUser from "../composables/useSupabaseUser";
+import { useRouter } from "vue-router";
 
 const jokeObj = ref(null);
 const question = ref("");
 const punchline = ref("");
+
+const router = useRouter();
+const { user } = useSupabaseUser();
 const { loading, jokes, getJokes, addJoke } = useJoke();
 
 onMounted(() => {
+    if (!user) {
+        router.push("/signin");
+    }
     getJokes();
 })
 

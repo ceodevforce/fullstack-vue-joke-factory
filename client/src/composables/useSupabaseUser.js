@@ -1,6 +1,6 @@
 import { ref } from "vue";
 import { supabase } from "../supabase";
-
+import { useRouter } from "vue-router";
 
 const useSupabaseUser = () => {
     const loading = ref(false);
@@ -8,6 +8,8 @@ const useSupabaseUser = () => {
     const existingUser = ref(null);
     const error = ref(null);
     const user = ref(null);
+
+    const router = useRouter();
 
     const userSignUp = async(email, password) => {
         let { user, error } = await supabase.auth.signUp({
@@ -46,7 +48,14 @@ const useSupabaseUser = () => {
         return newUser;
     }
 
-    const userSignOut = async() => {}
+    const userSignOut = async() => {
+        let { error } = await supabase.auth.signOut();
+        if (error) {
+            throw new Error(error);
+        }
+        user.value = null;
+
+    }
 
 
     // User is signed in
@@ -63,6 +72,7 @@ const useSupabaseUser = () => {
         userSignUp,
         userSignIn,
         userMagicLink,
+        userSignOut,
     }
 }
 
