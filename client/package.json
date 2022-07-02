@@ -17,6 +17,7 @@
     "@supabase/supabase-js": "^1.35.4",
     "@vue/apollo-composable": "^4.0.0-alpha.18",
     "apollo-boost": "^0.4.9",
+    "bootstrap": "^5.2.0-beta1",
     "graphql": "^16.5.0",
     "graphql-tag": "^2.12.6",
     "pinia": "^2.0.14",
