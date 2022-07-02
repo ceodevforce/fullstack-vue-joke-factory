@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref, reactive, watchEffect, onMounted } from "vue";
 // import useFoo from "../composables/useFoo";
 import { useJokeStore } from "../stores/joke";
@@ -14,7 +14,6 @@ import { useJokeStore } from "../stores/joke";
 
 </script>
 <template>
-
   <main>
     <MainHero />
 
@@ -22,16 +21,9 @@ import { useJokeStore } from "../stores/joke";
     <section class="py-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-10 ms-auto me-auto">
-            
-
-  
-          </div>
+          <div class="col-md-10 ms-auto me-auto" />
         </div>
       </div>
     </section>
-
-
-
   </main>
 </template>

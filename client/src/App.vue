@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref, reactive, watchEffect, onMounted } from "vue";
 import { useJokeStore } from "./stores/joke";
 import useJoke from "./composables/useJoke";
@@ -25,7 +25,7 @@ store.jokeArray.push(jokes);
 
 <template>
   <RouterView />
- </template>
+</template>
 
 <style>
 /* @import '@/assets/base.css'; */

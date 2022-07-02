@@ -1,5 +1,4 @@
-<script setup lang="ts">
-import type { fromPromise } from "@apollo/client/core";
+<script setup>
 import { ref, reactive, watchEffect, onMounted } from "vue";
 import { RouterLink } from 'vue-router'
 
@@ -11,27 +10,66 @@ console.log(user)
 <template>
   <nav class="navbar navbar-expand-lg navbar-light joke-bar">
     <div class="container-fluid">
-      <RouterLink to="/" class="navbar-brand">J-Factory</RouterLink>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <RouterLink
+        to="/"
+        class="navbar-brand"
+      >
+        J-Factory
+      </RouterLink>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon" />
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div
+        id="navbarSupportedContent"
+        class="collapse navbar-collapse"
+      >
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
           <li class="nav-item">
-            <RouterLink to="/joke-feed" class="nav-link">J-Feed</RouterLink>
+            <RouterLink
+              to="/joke-feed"
+              class="nav-link"
+            >
+              J-Feed
+            </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/signup" class="nav-link">Signup</RouterLink>
+            <RouterLink
+              to="/signup"
+              class="nav-link"
+            >
+              Signup
+            </RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/signin" class="nav-link">SignIn</RouterLink>
+            <RouterLink
+              to="/signin"
+              class="nav-link"
+            >
+              SignIn
+            </RouterLink>
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          >
+          <button
+            class="btn btn-outline-success"
+            type="submit"
+          >
+            Search
+          </button>
         </form>
       </div>
     </div>
