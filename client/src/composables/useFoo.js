@@ -8,6 +8,7 @@ const useFoo = () => {
         loading.value = true;
         foo.value = "foo";
     }
+    const example = async() => {}
 
     return {
         loading,
