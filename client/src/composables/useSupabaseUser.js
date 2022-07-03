@@ -31,7 +31,6 @@ const useSupabaseUser = () => {
         if (error) {
             throw new Error(error);
         }
-        console.log(user);
         existingUser.value = user;
         return existingUser;
     }

@@ -14,7 +14,6 @@ onMounted(() => {
 
 const addJokeSubmit = () => {
     // Launch modal for new joke
-    console.log("addJokes")
     jokeObj.value = {
         question: question.value,
         punchline: punchline.value
@@ -27,9 +26,7 @@ const addJokeSubmit = () => {
     // update the joke list
 }
 
-watchEffect(() => {
-    console.log(jokes.value)
-})
+
 
 </script>
 <template>

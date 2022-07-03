@@ -2,7 +2,9 @@
 import { ref, reactive, watchEffect, onMounted } from "vue";
 import { useJokeStore } from "./stores/joke";
 import useJoke from "./composables/useJoke";
+import { useRoute } from "vue-router";
 
+const route = useRoute();
 const { loading, jokes, getJokes } = useJoke();
 
 onMounted(() => {
@@ -21,6 +23,9 @@ store.jokeArray.push(jokes);
 
 
 //TODO: Add features and transitions (pages)
+
+watchEffect(() => { 
+})
 </script>
 
 <template>

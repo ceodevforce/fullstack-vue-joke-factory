@@ -14,7 +14,6 @@ const useJoke = () => {
             if (error) {
                 throw new Error(error);
             }
-            console.log(data);
             jokes.value = data;
         } catch (error) {
             console.log(error);
@@ -31,7 +30,6 @@ const useJoke = () => {
             if (error) {
                 throw new Error("Error adding joke");
             }
-            console.log(data);
         } catch (error) {
             console.log(error);
         }
